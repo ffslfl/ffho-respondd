@@ -14,8 +14,8 @@ A gluon compatible status script for respondd in python.
 ## Setup
 
 ### config.json
-Startparameter for ext-respondd.  
-Copy `config.json.example` to `config.json` and change it to match your server configuration.  
+Startparameter for ext-respondd.
+Copy `config.json.example` to `config.json` and change it to match your server configuration.
 (`cp config.json.example config.json`)
 
  * `batman` (string) (Needed: typical bat0)
@@ -26,8 +26,8 @@ Copy `config.json.example` to `config.json` and change it to match your server c
 
 
 ### alias.json
-Aliases to overwrite the returned server data.  
-Copy `alias.json.example` to `alias.json` and input e.g. owner information.  
+Aliases to overwrite the returned server data.
+Copy `alias.json.example` to `alias.json` and input e.g. owner information.
 (`cp alias.json.example alias.json`)
 
 The JSON content matches one block of the nodes.json, which is outputted by e.g. the [HopGlass-Server](https://github.com/plumpudding/hopglass-server).
