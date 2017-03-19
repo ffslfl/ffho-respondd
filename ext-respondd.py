@@ -207,6 +207,8 @@ def getMeshVPNPeers():
 def getNode_ID():
     if 'node_id' in config['nodeinfo']:
         return config['nodeinfo']['node_id']
+    elif 'network' in config['nodeinfo'] and 'mac' in config['nodeinfo']['network']:
+        return config['nodeinfo']['network']['mac'].replace(':','')
     else:
         return getDevice_MAC(config["batman"]).replace(':','')
 
@@ -303,7 +305,6 @@ def createNodeinfo():
                     "interfaces": getBat0_Interfaces(),
                 },
             },
-            "mac": getDevice_MAC(config["batman"]),
             "mesh_interfaces": list(getMesh_Interfaces().values()),
         },
         "software": {
@@ -339,6 +340,11 @@ def createNodeinfo():
             "enabled": True,
         },
         j['vpn'] = True
+
+    if 'network' in config['nodeinfo'] and 'mac' in config['nodeinfo']['network']:
+        j['network']['mac'] = config['nodeinfo']['network']['mac']
+    else:
+        j['network']['mac'] = getDevice_MAC(config['batman'])
 
     if 'location' in config['nodeinfo']:
         j['location'] = {

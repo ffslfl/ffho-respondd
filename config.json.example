@@ -9,6 +9,9 @@
       "latitude": 51.7236,
       "longitude": 8.7484
     },
+    "network": {
+      "mac": "ca:ff:ee:ba:be:00"
+    },
     "node_id": "caffeebabe00",
     "owner": {
         "contact": "contact@example.tld"
