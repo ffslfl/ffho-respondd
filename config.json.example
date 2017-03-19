@@ -3,6 +3,18 @@
   "bridge": "br-client",
   "mesh-vpn": [ "mesh-vpn" ],
   "mesh-wlan": [ "ibss0", "mesh0" ],
-  "fastd_socket": "/var/run/fastd.mesh_vpn.socket"
+  "fastd_socket": "/var/run/fastd.mesh_vpn.socket",
+  "nodeinfo": {
+    "location": {
+      "latitude": 51.7236,
+      "longitude": 8.7484
+    },
+    "node_id": "caffeebabe00",
+    "owner": {
+        "contact": "contact@example.tld"
+    },
+    "system": {
+      "site_code": "ffho"
+    }
+  }
 }
-

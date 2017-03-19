@@ -205,8 +205,8 @@ def getMeshVPNPeers():
         return None
 
 def getNode_ID():
-    if 'node_id' in aliases["nodeinfo"]:
-        return aliases["nodeinfo"]["node_id"]
+    if 'node_id' in config['nodeinfo']:
+        return config['nodeinfo']['node_id']
     else:
         return getDevice_MAC(config["batman"]).replace(':','')
 
@@ -327,10 +327,10 @@ def createNodeinfo():
             "model": getCPUInfo()["model name"],
             "nproc": int(call(['nproc'])[0]),
         },
+        "system": {
+            "site_code": config['nodeinfo']['system']['site_code'],
+        },
         "vpn": False,
-        "owner": {},
-        "system": {},
-        "location": {},
     }
 
     if 'fastd_socket' in config:
@@ -340,7 +340,18 @@ def createNodeinfo():
         },
         j['vpn'] = True
 
-    return merge(j, aliases["nodeinfo"])
+    if 'location' in config['nodeinfo']:
+        j['location'] = {
+            "latitude": config['nodeinfo']['location']['latitude'],
+            "longitude": config['nodeinfo']['location']['longitude'],
+        }
+
+    if 'owner' in config['nodeinfo']:
+        j['owner'] = {
+            "contact": config['owner']['contact']
+        }
+
+    return j
 
 def createStatistics():
     j = {
@@ -417,13 +428,6 @@ config = {}
 try:
     with open("config.json", 'r') as cfg_handle:
         config = json.load(cfg_handle)
-except IOError:
-    raise
-
-aliases = {}
-try:
-    with open("alias.json", 'r') as cfg_handle:
-        aliases = json.load(cfg_handle)
 except IOError:
     raise
 
