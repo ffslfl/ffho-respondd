@@ -315,10 +315,6 @@ def createNodeinfo():
                 "version": open('/sys/module/batman_adv/version').read().strip(),
 #                "compat": # /lib/gluon/mesh-batman-adv-core/compat
             },
-            "fastd": {
-                "version": call(['fastd','-v'])[0].split(' ')[1],
-                "enabled": True,
-            },
             "status-page": {
                 "api": 0,
             },
@@ -331,11 +327,19 @@ def createNodeinfo():
             "model": getCPUInfo()["model name"],
             "nproc": int(call(['nproc'])[0]),
         },
-#        "vpn": True,
+        "vpn": False,
         "owner": {},
         "system": {},
         "location": {},
     }
+
+    if 'fastd_socket' in config:
+        j['fastd'] = {
+            "version": call(['fastd','-v'])[0].split(' ')[1],
+            "enabled": True,
+        },
+        j['vpn'] = True
+
     return merge(j, aliases["nodeinfo"])
 
 def createStatistics():
