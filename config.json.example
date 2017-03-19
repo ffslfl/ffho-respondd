@@ -13,6 +13,11 @@
     "owner": {
         "contact": "contact@example.tld"
     },
+    "software": {
+      "firmware": {
+        "release": "0.42"
+      }
+    },
     "system": {
       "site_code": "ffho"
     }

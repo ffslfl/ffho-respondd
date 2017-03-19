@@ -308,8 +308,8 @@ def createNodeinfo():
         },
         "software": {
             "firmware": {
-                "base": call(['lsb_release','-is'])[0],
-                "release": call(['lsb_release','-ds'])[0],
+                "base": call(['lsb_release','-ds'])[0],
+                "release": config['nodeinfo']['software']['firmware']['release'],
             },
             "batman-adv": {
                 "version": open('/sys/module/batman_adv/version').read().strip(),
