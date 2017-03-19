@@ -424,6 +424,7 @@ def sendResponse(request, compress):
 
 parser = argparse.ArgumentParser()
 
+parser.add_argument( '-c', '--cfg', default='config.json', metavar='<file>', help='Config File',required=False,)
 parser.add_argument( '-d', '--debug', action='store_true', help='Debug Output',required=False,)
 parser.add_argument( '-v', '--verbose', action='store_true', help='Verbose Output',required=False)
 
@@ -432,7 +433,7 @@ options = vars(args)
 
 config = {}
 try:
-    with open("config.json", 'r') as cfg_handle:
+    with open(options['cfg'], 'r') as cfg_handle:
         config = json.load(cfg_handle)
 except IOError:
     raise
