@@ -61,10 +61,12 @@ Add this to your aliases.json in your [HopGlass-Server](https://github.com/plump
 ## Related projects
 
 Collecting data from respondd:
-* [respond-collector](https://github.com/FreifunkBremen/respond-collector) written in Go
+* [yanic](https://github.com/FreifunkBremen/yanic) from Freifunk Bremen written in Go
 * [HopGlass Server](https://github.com/hopglass/hopglass-server) written in Node.js
 
 Respondd for servers:
-* [respondd branch of ffnord-alfred-announce](https://github.com/ffnord/ffnord-alfred-announce/tree/respondd) from FreiFunkNord
+* [ext-respondd](https://github.com/ffggrz/ext-respondd) from Freifunk Gera-Greiz
+* [ffnord-alfred-announce](https://github.com/ffnord/ffnord-alfred-announce) from FreiFunkNord
+* [py-respondd](https://github.com/descilla/py-respondd)
 * [respondd](https://github.com/FreifunkBremen/respondd) from Freifunk Bremen (just a proof of concept)
 
