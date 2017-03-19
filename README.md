@@ -33,14 +33,15 @@ Copy `alias.json.example` to `alias.json` and input e.g. owner information.
 The JSON content matches one block of the nodes.json, which is outputted by e.g. the [HopGlass-Server](https://github.com/plumpudding/hopglass-server).
 
 
-### ext-respondd.service
-Register ext-respondd as a systemd service
+### respondd.service
+Register respondd as a systemd service
 
 ```
-cp ext-respondd.service.example /lib/systemd/system/ext-respondd.service
-! modify the path inside of the ext-respondd.service !
-systemctl enable ext-respondd
-systemctl start ext-respondd
+cp respondd.service.example /lib/systemd/system/respondd.service
+# modify the path inside of the respondd.service if needed
+systemctl daemon-reload
+systemctl enable respondd
+systemctl start respondd
 ```
 
 ## Notes
