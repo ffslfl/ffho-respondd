@@ -25,14 +25,6 @@ Copy `config.json.example` to `config.json` and change it to match your server c
  * `fastd_socket` (string) (Optional: needed for uplink-flag)
 
 
-### alias.json
-Aliases to overwrite the returned server data.
-Copy `alias.json.example` to `alias.json` and input e.g. owner information.
-(`cp alias.json.example alias.json`)
-
-The JSON content matches one block of the nodes.json, which is outputted by e.g. the [HopGlass-Server](https://github.com/plumpudding/hopglass-server).
-
-
 ### respondd.service
 Register respondd as a systemd service
 
@@ -42,21 +34,6 @@ cp respondd.service.example /lib/systemd/system/respondd.service
 systemctl daemon-reload
 systemctl enable respondd
 systemctl start respondd
-```
-
-## Notes
-Add this to your aliases.json in your [HopGlass-Server](https://github.com/plumpudding/hopglass-server) if this a gateway.
-
-```
-  "gw2": {
-    "nodeinfo": {
-      "hostname": "Gateway 2",
-      "node_id": "gw2"
-    },
-    "flags": {
-      "gateway": true
-    }
-  }
 ```
 
 ## Related projects
