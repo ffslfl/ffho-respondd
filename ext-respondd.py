@@ -301,7 +301,7 @@ def createNodeinfo():
         "hostname": socket.gethostname(),
         "network": {
             "addresses": getDevice_Addresses(config['bridge']),
-            "mac": getDevice_MAC(config['batman'])
+            "mac": getDevice_MAC(config['batman']),
             "mesh": {
                 "bat0": {
                     "interfaces": getBat0_Interfaces(),
