@@ -458,11 +458,12 @@ if 'addr' in config:
 else:
     port = 1001
 
-if_idx = socket.if_nametoindex(config["bridge"])
+if_idx = socket.if_nametoindex(config['bridge'])
 group = socket.inet_pton(socket.AF_INET6, addr) + struct.pack("I", if_idx)
 
 sock = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
 sock.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_JOIN_GROUP, group)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_BINDTODEVICE, bytes(config['bridge'], 'UTF-8'))
 sock.bind(('::', port))
 
 # =========================================================
