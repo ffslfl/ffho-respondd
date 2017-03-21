@@ -23,6 +23,7 @@
     },
     "system": {
       "site_code": "ffho"
-    }
+    },
+	"vpn": true
   }
 }

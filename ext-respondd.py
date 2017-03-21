@@ -301,6 +301,7 @@ def createNodeinfo():
         "hostname": socket.gethostname(),
         "network": {
             "addresses": getDevice_Addresses(config['bridge']),
+            "mac": getDevice_MAC(config['batman'])
             "mesh": {
                 "bat0": {
                     "interfaces": getBat0_Interfaces(),
@@ -340,25 +341,8 @@ def createNodeinfo():
             "version": call(['fastd','-v'])[0].split(' ')[1],
             "enabled": True,
         },
-        j['vpn'] = True
 
-    if 'network' in config['nodeinfo'] and 'mac' in config['nodeinfo']['network']:
-        j['network']['mac'] = config['nodeinfo']['network']['mac']
-    else:
-        j['network']['mac'] = getDevice_MAC(config['batman'])
-
-    if 'location' in config['nodeinfo']:
-        j['location'] = {
-            "latitude": config['nodeinfo']['location']['latitude'],
-            "longitude": config['nodeinfo']['location']['longitude'],
-        }
-
-    if 'owner' in config['nodeinfo']:
-        j['owner'] = {
-            "contact": config['owner']['contact']
-        }
-
-    return j
+    return merge(j, config['nodeinfo'])
 
 def createStatistics():
     j = {
