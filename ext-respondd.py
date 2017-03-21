@@ -336,7 +336,7 @@ def createNodeinfo():
         "vpn": False,
     }
 
-    if 'fastd_socket' in config:
+    if 'mesh-vpn' in config:
         j['fastd'] = {
             "version": call(['fastd','-v'])[0].split(' ')[1],
             "enabled": True,
