@@ -298,7 +298,7 @@ def getCPUInfo():
 def createNodeinfo():
     j = {
         "node_id": getNode_ID(),
-        "hostname": socket.gethostname(),
+        "hostname": config['hostname'],
         "network": {
             "addresses": getDevice_Addresses(config['bridge']),
             "mac": getDevice_MAC(config['batman']),
