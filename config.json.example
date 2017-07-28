@@ -1,29 +1,29 @@
 {
   "batman": "bat0",
+  "hostname" "gw1"
   "bridge": "br-client",
   "mesh-vpn": [ "mesh-vpn" ],
-  "mesh-wlan": [ "ibss0", "mesh0" ],
   "fastd_socket": "/var/run/fastd.mesh_vpn.socket",
   "nodeinfo": {
     "location": {
-      "latitude": 51.7236,
-      "longitude": 8.7484
+      "latitude": 52.3745913,
+      "longitude": 4.8285751
     },
     "network": {
-      "mac": "ca:ff:ee:ba:be:00"
+      "mac": "6e:b4:ef:fe:a3:a2"
     },
-    "node_id": "caffeebabe00",
+    "node_id": "6eb4effea3a2",
     "owner": {
         "contact": "contact@example.tld"
     },
     "software": {
       "firmware": {
-        "release": "0.42"
+        "release": "0.4.1"
       }
     },
     "system": {
-      "site_code": "ffho"
+      "site_code": "ffslfl"
     },
-	"vpn": true
+	"vpn": True
   }
 }
