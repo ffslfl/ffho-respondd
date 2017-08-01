@@ -11,6 +11,7 @@ import struct
 import subprocess
 import argparse
 import re
+import itertools
 
 # Force encoding to UTF-8
 import locale                                         # Ensures that subsequent open()s
@@ -38,7 +39,7 @@ def merge(a, b):
         return d
 
     if isinstance(a, list) and isinstance(b, list):
-        return [merge(x, y) for x, y in itertools.izip_longest(a, b)]
+        return [merge(x, y) for x, y in itertools.zip_longest(a, b)]
 
     return a if b is None else b
 
