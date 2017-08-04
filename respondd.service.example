@@ -6,8 +6,8 @@ After=syslog.target network.target
 Type=simple
 User=root
 Group=root
-WorkingDirectory=/srv/ffslfl-respondd
-ExecStart=/srv/ffslfl-respondd/ext-respondd.py
+WorkingDirectory=/opt/ffslfl-respondd
+ExecStart=/opt/ffslfl-respondd/ext-respondd.py
 
 [Install]
 WantedBy=multi-user.target
